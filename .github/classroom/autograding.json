@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "Level One",
+      "setup": "npm install",
+      "run": "npm test -- -t level_one",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Levl Two",
+      "setup": "npm install",
+      "run": "npm test -- -t level_two",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Level Three",
+      "setup": "npm install",
+      "run": "npm test -- -t level_three",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
