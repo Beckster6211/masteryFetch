@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch</title>
+  </head>
+  <body>
+    <h1>Take a break from coding:</h1>
+    <section id="kanye-section">
+      <h2 class="section-heading">
+        Sometimes code is confusing. Press the button below for a quote from
+        Kanye West to be confused about instead.
+      </h2>
+      <h3 id="kanye-display">...</h3>
+      <button id="kanye-button" onclick="fetchKanyeQuote()">
+        Give me Kanye wisdom!
+      </button>
+    </section>
+    <section id="cat-section">
+      <h2 class="section-heading">
+        Let's take a moment to remind ourselves of what the internet is really
+        about...
+      </h2>
+      <img id="cat-display" style="height: 200px; width: auto" />
+      <button id="cat-button" onclick="fetchCat()">Show me a cat!</button>
+    </section>
+    <section id="joke-section">
+      <h2 class="section-heading">
+        Bugs got you down? Press the button below for a coding joke!
+      </h2>
+      <h3 id="joke-display">...</h3>
+      <button id="joke-button" onclick="fetchCodingJoke()">
+        Tell me a joke!
+      </button>
+    </section>
+    <section id="recipe-section">
+      <h2 class="section-heading">
+        Coding's hungry work. Enter a food below and press the button for a
+        recipe!
+      </h2>
+      <a id="recipe-link">...</a>
+      <input
+        aria-label="food-input"
+        id="food-input"
+        onchange="handleFoodChange()"
+      />
+      <button id="recipe-button" onclick="handleRecipeClick()">
+        Give me a recipe!
+      </button>
+    </section>
+    <script src="./main.js"></script>
+  </body>
+</html>
