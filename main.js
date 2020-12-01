@@ -10,7 +10,14 @@ From the resulting data, get the string with the Kanye quote and display it as t
 
 async function fetchKanyeQuote() {
   //--- write your code below ---
-  const response = await fetch(); //finish me!
+  const response = await fetch("https://api.kanye.rest"); //finish me!
+  console.log(response);
+  const data = await response.json();
+  console.log(data);
+  const text = data.quote;
+  console.log(text);
+  const textDisplay = document.querySelector("#kanye-display");
+  textDisplay.innerHTML = text;
   //--- write your code above ---
 }
 
@@ -22,6 +29,14 @@ From the result of this fetch, get the url of the resulting cat picture out of t
 
 async function fetchCat() {
   //--- write your code below ---
+  const response = await fetch("https://api.thecatapi.com/v1/images/search");
+  console.log(response);
+  const data = await response.json();
+  console.log(data);
+  const catPicUrl = data[0].url;
+  console.log(catPicUrl);
+  const imageSrc = document.querySelector("#cat-display");
+  imageSrc.src = catPicUrl;
   //--- write your code above ---
 }
 
@@ -42,6 +57,7 @@ Use the data from the fetch to display the joke itself in the inner HTML (using 
 
 async function fetchCodingJoke() {
   //--- write your code below ---
+  //experienced a problems with the api on this doc
   //--- write your code above ---
 }
 
@@ -67,7 +83,7 @@ function handleRecipeClick() {
 }
 
 function handleFoodChange() {
-  foodToSearch = document.querySelector('#food-input').value;
+  foodToSearch = document.querySelector("#food-input").value;
 }
 
 async function fetchRecipe(food) {
