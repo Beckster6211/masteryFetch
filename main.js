@@ -57,12 +57,25 @@ Use the data from the fetch to display the joke itself in the inner HTML (using 
 
 async function fetchCodingJoke() {
   //--- write your code below ---
-  //experienced a problems with the api on this doc
+  const response = await fetch(
+    "https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist&type=single"
+  );
+  console.log(response);
+  const data = await response.json();
+  console.log(data);
+  const joke = data.joke;
+  console.log(joke);
+  const jokeDisplay = document.querySelector("#joke-display");
+  jokeDisplay.innerHTML = joke;
   //--- write your code above ---
 }
 
 /* 
 4. Sign up to the free tier of the Edamam API here: https://developer.edamam.com/. Click "Get an API Key Now" in the top menu once signed in. Click the green button on the resulting page to create an application and enter a short name/description (it doesn't matter what). Once you submit this, you are taken to a page with your application ID and key.
+
+API signup	48ddd747	live
+application id 1b242ee8
+application key 0074a01c9eb1186484f725a5d5e5bca3	—
 
 Make a note of your id and key and then navigate to the API docs here: https://developer.edamam.com/edamam-docs-recipe-api. 
 
@@ -88,5 +101,21 @@ function handleFoodChange() {
 
 async function fetchRecipe(food) {
   //--- write your code below ---
+  const response = await fetch(
+    "https://api.edamam.com/search?q=chicken&app_id=1b242ee8&app_key=0074a01c9eb1186484f725a5d5e5bca3"
+  );
+  console.log(response);
+  const data = await response.json();
+  console.log(data);
+  const recipe = data.hits[0];
+  console.log(recipe);
+  // console.log(data.hits[0].recipe.label);
+  const recipeLabel = data.hits[0].recipe.label;
+  console.log(recipeLabel);
+  const recipeUrl = data.hits[0].recipe.url;
+  console.log(recipeUrl);
+  const text = document.querySelector("#recipe-link");
+  text.innerHTML = recipeLabel;
+  text.href = recipeUrl;
   //--- write your code above ---
 }
