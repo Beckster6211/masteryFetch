@@ -102,7 +102,7 @@ function handleFoodChange() {
 async function fetchRecipe(food) {
   //--- write your code below ---
   const response = await fetch(
-    "https://api.edamam.com/search?q=chicken&app_id=1b242ee8&app_key=0074a01c9eb1186484f725a5d5e5bca3"
+    `https://api.edamam.com/search?q=${food}&app_id=1b242ee8&app_key=0074a01c9eb1186484f725a5d5e5bca3`
   );
   console.log(response);
   const data = await response.json();
